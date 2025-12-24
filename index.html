@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeilWorld | Travel Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo-section">
+            <img src="logo.png" alt="Logo" class="nav-logo">
+            <span class="brand-name">SeilWorld</span>
+        </div>
+        <nav class="nav-links">
+            <button class="dropbtn" onclick="openModal('ideas-modal')">Backlog</button>
+        </nav>
+    </header>
+
+    <div id="map"></div>
+    
+    <div id="gallery-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('gallery-modal')">&times;</span>
+            <h2 id="country-name">Country</h2>
+            <div id="photo-grid" class="photo-grid"></div>
+        </div>
+    </div>
+
+    <div id="ideas-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('ideas-modal')">&times;</span>
+            <h2>SeilWorld Backlog</h2>
+            <ul>
+                <li>Autonomous Picture Upload Button / AI for Pin and Location Detection -> Picture added to Database</li>
+                <li>Implementation into SeilNet Intranet / Optional access for externals</li>
+                <li>Fill Color -> Flag if Country "hasPhoto"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
