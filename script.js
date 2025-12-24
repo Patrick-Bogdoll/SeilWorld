@@ -3,6 +3,10 @@ const travelData = {
     "IND": {
         name: "India",
         photos: ["IND.jpg"] 
+    },
+    "DEU": {
+        name: "Germany",
+        photos: ["GER.jpg"]
     }
 };
 
@@ -49,13 +53,17 @@ fetch('https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/mast
                 });
 
                 layer.on('click', function(e) {
-                    if (travelData[countryCode]) {
-                        openGallery(countryCode);
-                    } else {
-                        const name = feature.properties.name || "this country";
-                        alert("No photos for " + name);
-                    }
-                });
+        // --- NEW LOGGING LINE ---
+        console.log("Clicked Country Code:", countryCode); 
+        // ------------------------
+
+        if (travelData[countryCode]) {
+            openGallery(countryCode);
+        } else {
+            const name = feature.properties.name || "this country";
+            alert("No photos for " + name);
+        }
+        });
             }
         }).addTo(map);
     })
